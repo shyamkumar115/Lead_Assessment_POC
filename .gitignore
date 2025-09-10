@@ -99,7 +99,7 @@ dist
 
 # Gatsby files
 .cache/
-public
+# Note: Don't ignore frontend/public/ as it contains React app assets
 
 # Storybook build outputs
 .out
@@ -131,9 +131,16 @@ Thumbs.db
 *.h5
 *.model
 
-# Data files (too large for git)
-*.csv
-*.json
+# Data files (too large for git - be specific!)
+# Allow important config files but block large data files
+data/*.csv
+data/*.json
+data/*.parquet
+data/*.xlsx
+data/*.xls
+backend/data/*.csv
+models/*.json
+# Block all parquet/excel files everywhere
 *.parquet
 *.xlsx
 *.xls
